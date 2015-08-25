@@ -7,6 +7,9 @@ all:
 mipsbitcnt2: mipsbitcnt_2.c
 	mips-linux-gcc -static -march=r3000 -O1 mipsbitcnt_2.c mipsbitcount_2.c -o mipsbitcnt2.out
 
+mipsorg: mipsbitcnt_2.c mipsbitcount_assembler.s
+	mips-linux-gcc -static -march=r3000 -O1 mipsbitcnt_2.c mipsbitcount_assembler.s -o mipsOrg.out
+
 clean:
 	rm -rf output*
 	rm -f *.out
